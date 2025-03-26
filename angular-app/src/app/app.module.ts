@@ -15,7 +15,7 @@ import { WaitlistFormComponent } from './components/waitlist-form/waitlist-form.
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
