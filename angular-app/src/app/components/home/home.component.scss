@@ -1,0 +1,6 @@
+/* This file intentionally left minimal as styles are applied at component level
+   and global styles are in the main styles.scss file */
+
+main {
+  min-height: calc(100vh - 160px); /* Adjust based on header/footer height */
+}
