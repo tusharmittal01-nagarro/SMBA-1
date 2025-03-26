@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-waitlist-form',
@@ -11,37 +12,45 @@ export class WaitlistFormComponent {
   submitted = false;
   success = false;
   errorMessage = '';
-  
-  constructor(private fb: FormBuilder) {
+  isSubmitting = false;
+
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.waitlistForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      interests: ['', Validators.required]
+      phone: ['', [Validators.pattern(/^[0-9+ -]{10,15}$/)]],
+      message: ['']
     });
   }
-  
+
   get form() { 
     return this.waitlistForm.controls; 
   }
-  
+
   onSubmit() {
     this.submitted = true;
+    this.success = false;
+    this.errorMessage = '';
     
     if (this.waitlistForm.invalid) {
       return;
     }
     
-    // In a real application, this would send the data to a backend
-    // For the UI-only demo, we'll just simulate a successful submission
-    setTimeout(() => {
-      this.success = true;
-      this.waitlistForm.reset();
-      this.submitted = false;
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        this.success = false;
-      }, 5000);
-    }, 1500);
+    this.isSubmitting = true;
+    
+    this.http.post('/api/waitlist', this.waitlistForm.value)
+      .subscribe({
+        next: (response) => {
+          this.success = true;
+          this.isSubmitting = false;
+          this.waitlistForm.reset();
+          this.submitted = false;
+        },
+        error: (error) => {
+          console.error('Error submitting waitlist form:', error);
+          this.errorMessage = error.error?.message || 'Failed to submit form. Please try again later.';
+          this.isSubmitting = false;
+        }
+      });
   }
 }

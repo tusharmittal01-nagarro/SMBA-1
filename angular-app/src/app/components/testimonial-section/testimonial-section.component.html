@@ -1,55 +1,65 @@
-<section id="testimonials" class="section-padding">
+<section id="testimonials" class="testimonial-section section">
   <div class="container">
-    <h2 class="section-title text-center">What Our Customers Say</h2>
-    <p class="section-subtitle text-center">
-      Discover how our Ayurvedic products have helped improve the lives and wellbeing of our customers.
-    </p>
+    <h2 class="section-title">What Our Customers Say</h2>
     
-    <div class="testimonial-slider">
-      <div class="testimonial-slides">
-        <div *ngFor="let testimonial of testimonials; let i = index" 
-             class="testimonial-slide" 
-             [class.active]="i === activeSlide">
-          <div class="testimonial-card">
-            <div class="testimonial-rating mb-3">
-              <i *ngFor="let star of generateStars(testimonial.rating)" class="fas fa-star"></i>
+    <div class="testimonial-slider" *ngIf="!isLoading && !error">
+      <div class="testimonial-track" [style.transform]="'translateX(-' + (activeSlide * 100) + '%)'">
+        <div class="testimonial-slide" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-content">
+            <div class="testimonial-rating">
+              <span class="star" *ngFor="let star of generateStars(testimonial.rating)">
+                <i class="fas fa-star"></i>
+              </span>
             </div>
-            <p class="testimonial-comment">
-              "{{testimonial.comment}}"
-            </p>
-            <div class="testimonial-author d-flex align-items-center mt-4">
-              <div class="testimonial-avatar">
-                <img [src]="testimonial.avatar || 'assets/images/default-avatar.jpg'" 
-                     [alt]="testimonial.name" class="rounded-circle">
+            
+            <div class="testimonial-text">
+              <p>{{ testimonial.comment }}</p>
+            </div>
+            
+            <div class="testimonial-author">
+              <div class="author-avatar" *ngIf="testimonial.avatar">
+                <img [src]="testimonial.avatar" [alt]="testimonial.name">
               </div>
-              <div class="ms-3">
-                <h4 class="testimonial-name mb-0">{{testimonial.name}}</h4>
-                <p class="testimonial-title mb-0">Verified Customer</p>
+              <div class="author-avatar default-avatar" *ngIf="!testimonial.avatar">
+                <i class="fas fa-user"></i>
               </div>
+              <div class="author-name">{{ testimonial.name }}</div>
             </div>
           </div>
         </div>
       </div>
       
       <div class="testimonial-controls">
-        <button class="testimonial-control prev" (click)="prevSlide()">
+        <button class="control prev-btn" (click)="prevSlide()">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <div class="testimonial-indicators">
-          <button *ngFor="let testimonial of testimonials; let i = index" 
-                  class="testimonial-indicator" 
-                  [class.active]="i === activeSlide"
-                  (click)="setCurrentSlide(i)">
+        
+        <div class="indicators">
+          <button 
+            *ngFor="let testimonial of testimonials; let i = index" 
+            [class.active]="i === activeSlide"
+            (click)="setCurrentSlide(i)">
           </button>
         </div>
-        <button class="testimonial-control next" (click)="nextSlide()">
+        
+        <button class="control next-btn" (click)="nextSlide()">
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
     </div>
     
-    <div class="text-center mt-5">
-      <a href="#waitlist" class="btn btn-primary btn-lg rounded-pill px-4">Join Our Community</a>
+    <!-- Loading state -->
+    <div class="testimonial-loading" *ngIf="isLoading">
+      <div class="spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+      <p>Loading testimonials...</p>
+    </div>
+    
+    <!-- Error state -->
+    <div class="testimonial-error" *ngIf="error">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>{{ error }}</p>
     </div>
   </div>
 </section>

@@ -1,42 +1,110 @@
-.product-card {
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--border-color);
-  background-color: white;
+.product-section {
+  background-color: var(--light-bg);
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .product-image {
+  position: relative;
   height: 200px;
-  width: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
 
-.product-card:hover .product-image {
-  transform: scale(1.05);
+.product-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-weight: 500;
 }
 
-.product-title {
-  font-size: 1.1rem;
+.product-info {
+  padding: 1.5rem;
+}
+
+.product-name {
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 8px;
+  margin-bottom: 0.8rem;
+  color: var(--text-dark);
 }
 
 .product-description {
   font-size: 0.9rem;
-  color: var(--muted-text);
-  margin-bottom: 16px;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-.badge {
-  font-size: 0.75rem;
-  font-weight: 500;
-  padding: 0.35em 0.65em;
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-status {
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.btn-secondary.btn-sm {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.coming-soon-text {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .product-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .coming-soon-text {
+    font-size: 1rem;
+  }
 }

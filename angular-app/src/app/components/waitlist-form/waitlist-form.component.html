@@ -1,85 +1,112 @@
-<section id="waitlist" class="section-padding bg-light">
+<section id="contact" class="waitlist-section section">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
+    <div class="row align-items-center">
+      <div class="col-lg-6 waitlist-content">
         <h2 class="section-title">Join Our Waitlist</h2>
-        <p class="section-subtitle">
-          Be the first to know when our new Ayurvedic products launch. Sign up to receive early access, exclusive discounts, and personalized wellness advice.
+        <p class="waitlist-intro">
+          Be the first to experience our premium Ayurvedic products. Sign up for early access, exclusive offers, and updates on our launch.
         </p>
+        <div class="waitlist-features">
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Early access to our product lineup</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Special discounts for waitlist members</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Personalized dosha consultation</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-check-circle"></i>
+            <span>Exclusive wellness content</span>
+          </div>
+        </div>
       </div>
-    </div>
-    
-    <div class="row justify-content-center mt-4">
-      <div class="col-lg-6">
-        <div class="waitlist-form-card">
-          <div *ngIf="success" class="alert alert-success" role="alert">
-            <i class="fas fa-check-circle me-2"></i> Thank you for joining our waitlist! We'll notify you when our products launch.
+      
+      <div class="col-lg-6 waitlist-form-container">
+        <div class="form-wrapper">
+          <!-- Success message -->
+          <div class="form-success" *ngIf="success">
+            <div class="success-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your submission has been received. We'll contact you soon with exclusive updates.</p>
           </div>
           
-          <form [formGroup]="waitlistForm" (ngSubmit)="onSubmit()" *ngIf="!success || (success && submitted === false)">
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
+          <!-- Form -->
+          <form [formGroup]="waitlistForm" (ngSubmit)="onSubmit()" *ngIf="!success">
+            <div class="form-group">
+              <label for="name">Full Name</label>
               <input 
                 type="text" 
-                class="form-control" 
                 id="name" 
                 formControlName="name" 
-                [ngClass]="{'is-invalid': submitted && form['name'].errors}"
-              >
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form['name'].errors }"
+                placeholder="Your name">
               <div *ngIf="submitted && form['name'].errors" class="invalid-feedback">
                 <div *ngIf="form['name'].errors['required']">Name is required</div>
                 <div *ngIf="form['name'].errors['minlength']">Name must be at least 2 characters</div>
               </div>
             </div>
             
-            <div class="mb-3">
-              <label for="email" class="form-label">Your Email</label>
+            <div class="form-group">
+              <label for="email">Email Address</label>
               <input 
                 type="email" 
-                class="form-control" 
                 id="email" 
                 formControlName="email" 
-                [ngClass]="{'is-invalid': submitted && form['email'].errors}"
-              >
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form['email'].errors }"
+                placeholder="Your email">
               <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
                 <div *ngIf="form['email'].errors['required']">Email is required</div>
-                <div *ngIf="form['email'].errors['email']">Please enter a valid email</div>
+                <div *ngIf="form['email'].errors['email']">Please enter a valid email address</div>
               </div>
             </div>
             
-            <div class="mb-4">
-              <label for="interests" class="form-label">Interests</label>
-              <select 
-                class="form-select" 
-                id="interests" 
-                formControlName="interests" 
-                [ngClass]="{'is-invalid': submitted && form['interests'].errors}"
-              >
-                <option value="" disabled selected>Select your primary interest</option>
-                <option value="herbs">Herbal Supplements</option>
-                <option value="oils">Essential Oils</option>
-                <option value="skincare">Ayurvedic Skincare</option>
-                <option value="diet">Ayurvedic Diet</option>
-                <option value="all">All Ayurvedic Products</option>
-              </select>
-              <div *ngIf="submitted && form['interests'].errors" class="invalid-feedback">
-                <div *ngIf="form['interests'].errors['required']">Please select an interest</div>
+            <div class="form-group">
+              <label for="phone">Phone Number (Optional)</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                formControlName="phone" 
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form['phone'].errors }"
+                placeholder="Your phone number">
+              <div *ngIf="submitted && form['phone'].errors" class="invalid-feedback">
+                <div *ngIf="form['phone'].errors['pattern']">Please enter a valid phone number</div>
               </div>
             </div>
             
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary btn-lg" [disabled]="submitted">
-                <span *ngIf="!submitted">Join Waitlist</span>
-                <span *ngIf="submitted">
-                  <i class="fas fa-spinner fa-spin me-2"></i> Submitting...
-                </span>
-              </button>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea 
+                id="message" 
+                formControlName="message" 
+                class="form-control" 
+                rows="4"
+                placeholder="What are you most excited about?"></textarea>
             </div>
             
-            <p class="text-center text-muted small mt-3">
-              By signing up, you agree to receive email updates about our products and services.
-              We respect your privacy and will never share your information.
-            </p>
+            <!-- Error message -->
+            <div class="alert alert-danger" *ngIf="errorMessage">
+              {{ errorMessage }}
+            </div>
+            
+            <button 
+              type="submit" 
+              class="btn-primary btn-block"
+              [disabled]="isSubmitting">
+              <span *ngIf="isSubmitting">
+                <i class="fas fa-spinner fa-spin"></i> Submitting...
+              </span>
+              <span *ngIf="!isSubmitting">Join the Waitlist</span>
+            </button>
           </form>
         </div>
       </div>

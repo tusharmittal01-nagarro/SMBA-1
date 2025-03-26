@@ -1,63 +1,124 @@
-.waitlist-form-card {
-  background-color: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+.waitlist-section {
+  background-color: #fff;
 }
 
-.form-label {
-  font-weight: 500;
-  color: var(--text-color);
-  margin-bottom: 0.5rem;
+.waitlist-content {
+  padding-right: 3rem;
+  
+  @media (max-width: 992px) {
+    padding-right: 0;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
 }
 
-.form-control, .form-select {
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.waitlist-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
 }
 
-.form-control:focus, .form-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.25rem rgba(var(--primary-color-rgb), 0.15);
+.waitlist-features {
+  margin-top: 2rem;
+  
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+    
+    i {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      margin-top: 0.2rem;
+    }
+    
+    span {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+  }
 }
 
-.form-control.is-invalid, .form-select.is-invalid {
-  border-color: var(--danger-color);
-  background-image: none;
+.form-wrapper {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.form-control.is-invalid:focus, .form-select.is-invalid:focus {
-  box-shadow: 0 0 0 0.25rem rgba(var(--danger-color-rgb), 0.15);
+.form-group {
+  margin-bottom: 1.5rem;
+  
+  label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+  }
+  
+  .form-control {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s;
+    
+    &:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.2);
+    }
+    
+    &.is-invalid {
+      border-color: #dc3545;
+    }
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
 }
 
-.invalid-feedback {
-  font-size: 0.85rem;
-  margin-top: 0.25rem;
+.btn-primary.btn-block {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.05rem;
 }
 
-.btn-primary {
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
 }
 
-.btn-primary:disabled {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
-  opacity: 0.7;
-}
-
-.alert-success {
-  background-color: rgba(var(--success-color-rgb), 0.1);
-  border-color: var(--success-color);
-  color: var(--success-color);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .waitlist-form-card {
-    padding: 1.5rem;
+.form-success {
+  text-align: center;
+  padding: 2rem 1rem;
+  
+  .success-icon {
+    font-size: 4rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
