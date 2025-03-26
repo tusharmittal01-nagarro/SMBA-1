@@ -1,0 +1,236 @@
+/* Import Bootstrap */
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Global Variables */
+:root {
+  --primary-color: hsl(159, 45%, 32%);
+  --primary-light: hsl(159, 45%, 42%);
+  --primary-dark: hsl(159, 45%, 22%);
+  --secondary-color: hsl(36, 58%, 85%);
+  --accent-color: hsl(39, 58%, 87%);
+  --text-color: hsl(160, 10%, 10%);
+  --muted-text: hsl(160, 10%, 40%);
+  --background-color: hsl(38, 33%, 97%);
+  --card-background: hsl(38, 33%, 99%);
+  --border-color: hsl(39, 12%, 90%);
+  --radius: 0.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+body, p, span, div, button {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Custom Components */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-text);
+  max-width: 42rem;
+  margin: 0 auto 2.5rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 36rem;
+  margin-top: 1rem;
+}
+
+.section-padding {
+  padding: 4rem 0;
+}
+
+.ayurveda-card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.ayurveda-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+  background-color: var(--card-background);
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.product-image {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  transition: colors 0.3s ease;
+}
+
+.product-card:hover .product-title {
+  color: var(--primary-color);
+}
+
+.product-description {
+  color: var(--muted-text);
+  margin-bottom: 1rem;
+}
+
+.testimonial-card {
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+/* Hero slider styles */
+.hero-slide {
+  position: relative;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Navigation */
+.nav-link {
+  position: relative;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+  padding: 0.5rem 0.25rem;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  padding-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.mobile-nav-link {
+  display: block;
+  font-size: 1.125rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Custom button */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .section-padding {
+    padding: 6rem 0;
+  }
+
+  .hero-slide {
+    height: 650px;
+  }
+}
