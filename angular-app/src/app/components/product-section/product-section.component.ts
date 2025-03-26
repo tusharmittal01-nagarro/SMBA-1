@@ -17,31 +17,31 @@ export class ProductSectionComponent {
   products: Product[] = [
     {
       id: 1,
-      name: 'Ashwagandha Supplement',
-      category: 'Supplements',
-      image: 'assets/images/product1.jpg',
-      description: 'A powerful adaptogen that helps the body manage stress and promotes overall wellbeing.'
+      name: 'Harmony Balance Oil',
+      category: 'Massage Oils',
+      image: 'assets/images/product-1.jpg',
+      description: 'A rejuvenating blend of sesame oil, brahmi, and ashwagandha to balance the doshas and promote relaxation.'
     },
     {
       id: 2,
-      name: 'Triphala Formula',
-      category: 'Herbs',
-      image: 'assets/images/product2.jpg',
-      description: 'Traditional Ayurvedic blend supporting digestive health and gentle detoxification.'
+      name: 'Digestive Support Formula',
+      category: 'Supplements',
+      image: 'assets/images/product-2.jpg',
+      description: 'Traditional herbs like triphala, fennel, and ginger combined to support healthy digestion and metabolism.'
     },
     {
       id: 3,
-      name: 'Brahmi Brain Boost',
-      category: 'Herbs',
-      image: 'assets/images/product3.jpg',
-      description: 'Supports mental clarity, focus and cognitive function with ancient herbs.'
+      name: 'Tranquil Mind Tea',
+      category: 'Herbal Teas',
+      image: 'assets/images/product-3.jpg',
+      description: 'A calming blend of brahmi, chamomile, and lemon balm to promote mental clarity and reduce stress.'
     },
     {
       id: 4,
-      name: 'Neem Purifying Face Wash',
+      name: 'Radiant Skin Cream',
       category: 'Skincare',
-      image: 'assets/images/product4.jpg',
-      description: 'Natural face cleanser with antibacterial neem to purify and balance skin.'
+      image: 'assets/images/product-4.jpg',
+      description: 'Nourishing cream with turmeric, saffron, and aloe vera to promote naturally glowing and healthy skin.'
     }
   ];
 }

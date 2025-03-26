@@ -1,61 +1,58 @@
-<footer class="bg-light py-5 mt-5">
+<footer class="footer bg-light">
   <div class="container">
-    <div class="row g-4">
-      <div class="col-lg-4 mb-4 mb-lg-0">
-        <h4 class="text-primary fw-bold mb-4">Balance Ayurveda</h4>
-        <p class="text-muted mb-4">Discover holistic wellness through authentic Ayurvedic formulations. Our products combine ancient wisdom with modern science to create effective, natural remedies.</p>
-        <div class="d-flex gap-3">
-          <a href="#" class="text-muted fs-5"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-muted fs-5"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-muted fs-5"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="text-muted fs-5"><i class="fab fa-youtube"></i></a>
+    <div class="footer-top">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <div class="footer-info">
+            <h3 class="footer-title">Balance Ayurveda</h3>
+            <p>
+              Bringing ancient Ayurvedic wisdom and modern wellness practices together for a balanced, healthier life.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <div class="col-6 col-md-4 col-lg-2">
-        <h5 class="fw-bold mb-4">Products</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Herbs</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Oils</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Teas</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Supplements</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Skin Care</a></li>
-        </ul>
-      </div>
-      
-      <div class="col-6 col-md-4 col-lg-2">
-        <h5 class="fw-bold mb-4">Company</h5>
-        <ul class="list-unstyled">
-          <li class="mb-2"><a href="#about" class="text-decoration-none text-muted">About Us</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Our Team</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Careers</a></li>
-          <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Contact Us</a></li>
-        </ul>
-      </div>
-      
-      <div class="col-md-4 col-lg-4">
-        <h5 class="fw-bold mb-4">Stay Updated</h5>
-        <p class="text-muted mb-3">Subscribe to receive updates on new products and special promotions.</p>
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
-          <button class="btn btn-primary" type="button">Subscribe</button>
+        
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a routerLink="/" fragment="home">Home</a></li>
+            <li><a routerLink="/" fragment="about">About Us</a></li>
+            <li><a routerLink="/" fragment="products">Products</a></li>
+            <li><a routerLink="/" fragment="testimonials">Testimonials</a></li>
+            <li><a routerLink="/" fragment="contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#">Ayurveda Basics</a></li>
+            <li><a href="#">Dosha Types</a></li>
+            <li><a href="#">Wellness Blog</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-contact">
+            <li><i class="fas fa-map-marker-alt"></i> 123 Ayurveda Way, Wellness City</li>
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-envelope"></i> info@balanceayurveda.in</li>
+          </ul>
         </div>
       </div>
     </div>
     
-    <hr class="my-4">
-    
-    <div class="row align-items-center">
-      <div class="col-md-6 text-center text-md-start">
-        <p class="text-muted mb-0">&copy; {{currentYear}} Balance Ayurveda. All rights reserved.</p>
-      </div>
-      <div class="col-md-6 mt-3 mt-md-0">
-        <ul class="list-inline text-center text-md-end mb-0">
-          <li class="list-inline-item"><a href="#" class="text-decoration-none text-muted small">Privacy Policy</a></li>
-          <li class="list-inline-item ms-3"><a href="#" class="text-decoration-none text-muted small">Terms of Service</a></li>
-          <li class="list-inline-item ms-3"><a href="#" class="text-decoration-none text-muted small">Shipping</a></li>
-          <li class="list-inline-item ms-3"><a href="#" class="text-decoration-none text-muted small">FAQ</a></li>
-        </ul>
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; {{ currentYear }} Balance Ayurveda. All Rights Reserved.
       </div>
     </div>
   </div>

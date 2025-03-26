@@ -16,27 +16,27 @@ export class AboutSectionComponent {
   features: Feature[] = [
     {
       id: 1,
-      title: 'Authentic Formulations',
-      description: 'Our products are created following traditional Ayurvedic texts and methods, ensuring authenticity and effectiveness.',
-      icon: 'fas fa-mortar-pestle'
+      title: 'Authentic Ayurveda',
+      description: 'Our products are crafted following traditional Ayurvedic principles passed down through generations.',
+      icon: 'fa-leaf'
     },
     {
       id: 2,
-      title: 'Pure Ingredients',
-      description: 'We source only the highest quality herbs, botanicals, and natural ingredients for our formulations.',
-      icon: 'fas fa-leaf'
+      title: 'Natural Ingredients',
+      description: 'We use only premium, pure, and sustainably sourced natural ingredients in all our formulations.',
+      icon: 'fa-seedling'
     },
     {
       id: 3,
-      title: 'Sustainable Practices',
-      description: 'Our commitment to sustainability extends from ethical sourcing to eco-friendly packaging.',
-      icon: 'fas fa-seedling'
+      title: 'Holistic Approach',
+      description: 'Each product is designed to promote balance and harmony between mind, body, and spirit.',
+      icon: 'fa-balance-scale'
     },
     {
       id: 4,
-      title: 'Modern Research',
-      description: 'We combine traditional knowledge with contemporary scientific research to create effective products.',
-      icon: 'fas fa-microscope'
+      title: 'Scientific Research',
+      description: 'Modern scientific techniques validate the effectiveness of our time-tested formulations.',
+      icon: 'fa-flask'
     }
   ];
 }

@@ -1,26 +1,34 @@
-<section id="products" class="section-padding">
+<section id="products" class="product-section section bg-light">
   <div class="container">
-    <h2 class="section-title text-center">Our Ayurvedic Products</h2>
+    <h2 class="section-title">Our Premium Products</h2>
     <p class="section-subtitle text-center">
-      Discover our range of authentic Ayurvedic formulations crafted with traditional knowledge and premium ingredients. Each product is created to bring balance and wellness to your daily routine.
+      Discover our range of authentic Ayurvedic formulations created with love and wisdom
     </p>
     
-    <div class="row g-4 mt-4">
-      <div *ngFor="let product of products" class="col-md-6 col-lg-3">
-        <div class="product-card h-100">
-          <img [src]="product.image" class="product-image" [alt]="product.name">
-          <div class="p-3">
-            <span class="badge bg-light text-primary mb-2">{{product.category}}</span>
-            <h3 class="product-title">{{product.name}}</h3>
-            <p class="product-description">{{product.description}}</p>
-            <a href="#waitlist" class="btn btn-outline-primary btn-sm mt-2">Join Waitlist</a>
+    <div class="row">
+      <div *ngFor="let product of products" class="col-lg-3 col-md-6 mb-4">
+        <div class="product-card">
+          <div class="product-image">
+            <img [src]="product.image" [alt]="product.name" class="img-fluid">
+            <div class="product-badge">{{ product.category }}</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-description">{{ product.description }}</p>
+            <div class="product-footer">
+              <span class="product-status">Coming Soon</span>
+              <a href="#contact" class="btn-secondary btn-sm">Join Waitlist</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
     
     <div class="text-center mt-5">
-      <a href="#waitlist" class="btn btn-primary btn-lg rounded-pill px-4">Get Notified When Available</a>
+      <p class="coming-soon-text">
+        We're launching our full product range soon! Join our waitlist to be the first to know and receive exclusive early access.
+      </p>
+      <a href="#contact" class="btn-primary">Join the Waitlist</a>
     </div>
   </div>
 </section>
