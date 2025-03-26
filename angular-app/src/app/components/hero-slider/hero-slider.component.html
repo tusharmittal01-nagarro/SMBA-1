@@ -1,0 +1,37 @@
+<section class="hero-slider position-relative">
+  <div class="hero-slides">
+    <div *ngFor="let slide of slides; let i = index" 
+         class="hero-slide" 
+         [style.background-image]="'url(' + slide.image + ')'"
+         [class.active]="i === currentSlide">
+      <div class="hero-content">
+        <div class="container">
+          <h2 class="hero-title mb-3">{{slide.title}}</h2>
+          <p class="hero-subtitle mb-4">{{slide.subtitle}}</p>
+          <a [href]="slide.buttonLink" class="btn btn-primary btn-lg rounded-pill px-4">
+            {{slide.buttonText}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Slider controls -->
+  <button class="carousel-control-prev" type="button" (click)="prevSlide()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" (click)="nextSlide()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  
+  <!-- Slider indicators -->
+  <div class="carousel-indicators">
+    <button *ngFor="let slide of slides; let i = index" 
+            type="button" 
+            [class.active]="i === currentSlide"
+            (click)="setCurrentSlide(i)">
+    </button>
+  </div>
+</section>

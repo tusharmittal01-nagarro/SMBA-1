@@ -1,0 +1,26 @@
+/* Footer styles */
+footer {
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
+}
+
+footer h4,
+footer h5 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+footer .fab {
+  transition: color 0.3s ease;
+}
+
+footer .fab:hover {
+  color: var(--primary-color) !important;
+}
+
+footer a {
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color) !important;
+}

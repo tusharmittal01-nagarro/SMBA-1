@@ -1,0 +1,35 @@
+<section id="about" class="section-padding bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <h2 class="section-title">Modern Wellness Rooted in Ancient Wisdom</h2>
+        <p class="mb-4">
+          At Balance Ayurveda, we believe in the timeless principles of Ayurveda, India's 5,000-year-old system of natural medicine. Our mission is to make these ancient healing practices accessible and relevant for today's lifestyle challenges.
+        </p>
+        <p class="mb-4">
+          Each of our formulations is created with meticulous attention to traditional methods while incorporating modern scientific understanding to ensure safety and efficacy.
+        </p>
+        <div class="mt-4">
+          <a href="#waitlist" class="btn btn-primary rounded-pill px-4 me-2">Join Waitlist</a>
+          <a href="#" class="btn btn-outline-primary rounded-pill px-4">Learn More</a>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 offset-lg-1">
+        <div class="row g-4">
+          <div *ngFor="let feature of features" class="col-md-6">
+            <div class="ayurveda-card h-100">
+              <div class="d-flex align-items-center mb-3">
+                <div class="feature-icon-wrapper">
+                  <i [class]="feature.icon"></i>
+                </div>
+                <h3 class="feature-title ms-3 mb-0">{{feature.title}}</h3>
+              </div>
+              <p class="feature-description mb-0">{{feature.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
