@@ -1,0 +1,55 @@
+<section id="testimonials" class="section-padding">
+  <div class="container">
+    <h2 class="section-title text-center">What Our Customers Say</h2>
+    <p class="section-subtitle text-center">
+      Discover how our Ayurvedic products have helped improve the lives and wellbeing of our customers.
+    </p>
+    
+    <div class="testimonial-slider">
+      <div class="testimonial-slides">
+        <div *ngFor="let testimonial of testimonials; let i = index" 
+             class="testimonial-slide" 
+             [class.active]="i === activeSlide">
+          <div class="testimonial-card">
+            <div class="testimonial-rating mb-3">
+              <i *ngFor="let star of generateStars(testimonial.rating)" class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-comment">
+              "{{testimonial.comment}}"
+            </p>
+            <div class="testimonial-author d-flex align-items-center mt-4">
+              <div class="testimonial-avatar">
+                <img [src]="testimonial.avatar || 'assets/images/default-avatar.jpg'" 
+                     [alt]="testimonial.name" class="rounded-circle">
+              </div>
+              <div class="ms-3">
+                <h4 class="testimonial-name mb-0">{{testimonial.name}}</h4>
+                <p class="testimonial-title mb-0">Verified Customer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-controls">
+        <button class="testimonial-control prev" (click)="prevSlide()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="testimonial-indicators">
+          <button *ngFor="let testimonial of testimonials; let i = index" 
+                  class="testimonial-indicator" 
+                  [class.active]="i === activeSlide"
+                  (click)="setCurrentSlide(i)">
+          </button>
+        </div>
+        <button class="testimonial-control next" (click)="nextSlide()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <a href="#waitlist" class="btn btn-primary btn-lg rounded-pill px-4">Join Our Community</a>
+    </div>
+  </div>
+</section>

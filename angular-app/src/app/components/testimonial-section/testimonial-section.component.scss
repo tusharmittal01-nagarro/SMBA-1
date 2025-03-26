@@ -1,0 +1,131 @@
+.testimonial-slider {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.testimonial-slides {
+  position: relative;
+  height: 320px;
+}
+
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.testimonial-rating {
+  color: #f9b851; /* Golden star color */
+}
+
+.testimonial-comment {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.testimonial-avatar img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid var(--primary-color-light);
+}
+
+.testimonial-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.testimonial-title {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+}
+
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.testimonial-control {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--text-color);
+}
+
+.testimonial-control:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.testimonial-indicators {
+  display: flex;
+  gap: 8px;
+  margin: 0 15px;
+}
+
+.testimonial-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.testimonial-indicator.active {
+  background-color: var(--primary-color);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-slides {
+    height: 380px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonial-comment {
+    font-size: 1rem;
+  }
+  
+  .testimonial-slides {
+    height: 420px;
+  }
+}

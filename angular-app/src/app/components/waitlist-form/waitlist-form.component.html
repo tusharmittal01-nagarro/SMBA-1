@@ -1,0 +1,88 @@
+<section id="waitlist" class="section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="section-title">Join Our Waitlist</h2>
+        <p class="section-subtitle">
+          Be the first to know when our new Ayurvedic products launch. Sign up to receive early access, exclusive discounts, and personalized wellness advice.
+        </p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-6">
+        <div class="waitlist-form-card">
+          <div *ngIf="success" class="alert alert-success" role="alert">
+            <i class="fas fa-check-circle me-2"></i> Thank you for joining our waitlist! We'll notify you when our products launch.
+          </div>
+          
+          <form [formGroup]="waitlistForm" (ngSubmit)="onSubmit()" *ngIf="!success || (success && submitted === false)">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                formControlName="name" 
+                [ngClass]="{'is-invalid': submitted && form['name'].errors}"
+              >
+              <div *ngIf="submitted && form['name'].errors" class="invalid-feedback">
+                <div *ngIf="form['name'].errors['required']">Name is required</div>
+                <div *ngIf="form['name'].errors['minlength']">Name must be at least 2 characters</div>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                formControlName="email" 
+                [ngClass]="{'is-invalid': submitted && form['email'].errors}"
+              >
+              <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                <div *ngIf="form['email'].errors['required']">Email is required</div>
+                <div *ngIf="form['email'].errors['email']">Please enter a valid email</div>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <label for="interests" class="form-label">Interests</label>
+              <select 
+                class="form-select" 
+                id="interests" 
+                formControlName="interests" 
+                [ngClass]="{'is-invalid': submitted && form['interests'].errors}"
+              >
+                <option value="" disabled selected>Select your primary interest</option>
+                <option value="herbs">Herbal Supplements</option>
+                <option value="oils">Essential Oils</option>
+                <option value="skincare">Ayurvedic Skincare</option>
+                <option value="diet">Ayurvedic Diet</option>
+                <option value="all">All Ayurvedic Products</option>
+              </select>
+              <div *ngIf="submitted && form['interests'].errors" class="invalid-feedback">
+                <div *ngIf="form['interests'].errors['required']">Please select an interest</div>
+              </div>
+            </div>
+            
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="submitted">
+                <span *ngIf="!submitted">Join Waitlist</span>
+                <span *ngIf="submitted">
+                  <i class="fas fa-spinner fa-spin me-2"></i> Submitting...
+                </span>
+              </button>
+            </div>
+            
+            <p class="text-center text-muted small mt-3">
+              By signing up, you agree to receive email updates about our products and services.
+              We respect your privacy and will never share your information.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
