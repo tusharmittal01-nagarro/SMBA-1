@@ -11,7 +11,7 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
-    "@angular/cli": "^19.2.4",
+    "@angular/cli": "^19.2.6",
     "@angular/common": "^19.2.3",
     "@angular/core": "^19.2.3",
     "@angular/forms": "^19.2.3",
@@ -64,6 +64,7 @@
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "framer-motion": "^11.13.1",
+    "http-server": "^14.1.1",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.453.0",
     "memorystore": "^1.6.7",

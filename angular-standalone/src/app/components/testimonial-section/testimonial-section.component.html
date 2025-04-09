@@ -1,0 +1,36 @@
+<section id="testimonials" class="testimonial-section section bg-light">
+  <div class="container">
+    <h2 class="section-title">Customer Testimonials</h2>
+    <p class="section-subtitle text-center">What our customers say about our products</p>
+    
+    <div class="row">
+      <div class="col-lg-6" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="testimonial-rating">
+              <span class="star filled" *ngFor="let star of getStars(testimonial.rating)">
+                <i class="fas fa-star"></i>
+              </span>
+              <span class="star empty" *ngFor="let star of getEmptyStars(testimonial.rating)">
+                <i class="far fa-star"></i>
+              </span>
+            </div>
+            <p class="testimonial-text">{{testimonial.comment}}</p>
+          </div>
+          <div class="testimonial-user">
+            <div class="user-avatar" *ngIf="testimonial.avatar">
+              <img [src]="testimonial.avatar" [alt]="testimonial.name">
+            </div>
+            <div class="user-avatar default-avatar" *ngIf="!testimonial.avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="user-info">
+              <h4 class="user-name">{{testimonial.name}}</h4>
+              <p class="user-title">Verified Customer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

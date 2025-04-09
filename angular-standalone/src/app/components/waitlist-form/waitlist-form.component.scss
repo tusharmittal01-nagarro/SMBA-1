@@ -1,0 +1,142 @@
+.waitlist-section {
+  background: linear-gradient(rgba(var(--primary-color-rgb), 0.05), rgba(var(--primary-color-rgb), 0.02));
+}
+
+.waitlist-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.waitlist-info {
+  padding: 3rem;
+  background-color: var(--primary-color);
+  color: white;
+  
+  @media (max-width: 991px) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.waitlist-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.waitlist-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.waitlist-benefits {
+  margin-top: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  margin-bottom: 1.5rem;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.benefit-icon {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  min-width: 24px;
+}
+
+.benefit-text {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    opacity: 0.9;
+  }
+}
+
+.waitlist-form-container {
+  padding: 3rem;
+  
+  @media (max-width: 991px) {
+    padding: 2.5rem 2rem;
+  }
+}
+
+.waitlist-form {
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .form-control {
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+    
+    &:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
+    }
+    
+    &.is-invalid {
+      border-color: #dc3545;
+    }
+  }
+  
+  select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 8px 10px;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+  }
+  
+  .form-actions {
+    margin-top: 2rem;
+    
+    .btn-primary {
+      width: 100%;
+      height: 50px;
+      font-weight: 600;
+      
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .error-message {
+    margin-top: 1rem;
+    color: #dc3545;
+    text-align: center;
+  }
+}

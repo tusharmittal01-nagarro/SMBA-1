@@ -1,0 +1,29 @@
+<section id="products" class="product-section section">
+  <div class="container">
+    <h2 class="section-title">Our Premium Products</h2>
+    <p class="section-subtitle text-center">Discover our range of authentic Ayurvedic formulations</p>
+    
+    <div class="row">
+      <div class="col-lg-3 col-md-6" *ngFor="let product of products">
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-category">{{product.category}}</span>
+            <img [src]="product.image" [alt]="product.name" class="img-fluid">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">{{product.name}}</h3>
+            <p class="product-description">{{product.description}}</p>
+            <div class="product-action">
+              <a href="#contact" class="btn-sm btn-primary">Join Waitlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-5">
+      <p class="coming-soon-text">More products coming soon. Join our waitlist to be the first to know!</p>
+      <a href="#contact" class="btn-primary">Join Waitlist</a>
+    </div>
+  </div>
+</section>

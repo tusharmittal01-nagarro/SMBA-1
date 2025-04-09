@@ -1,0 +1,33 @@
+<section id="about" class="about-section section">
+  <div class="container">
+    <h2 class="section-title">About Balance Ayurveda</h2>
+    
+    <div class="about-content">
+      <div class="row align-items-center">
+        <div class="col-lg-6 about-text">
+          <p class="lead">Reconnecting modern lives with the ancient wisdom of Ayurveda through premium wellness products.</p>
+          <p>At Balance Ayurveda, we believe that true well-being comes from achieving harmony between mind, body, and spirit. Our products are crafted following authentic Ayurvedic principles while incorporating modern scientific research.</p>
+          <p>Each formulation is developed by experienced Ayurvedic practitioners and made with sustainably sourced ingredients of the highest quality.</p>
+        </div>
+        
+        <div class="col-lg-6 about-image">
+          <img src="assets/images/about.svg" alt="About Balance Ayurveda" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+    
+    <div class="features">
+      <div class="row">
+        <div class="col-lg-3 col-md-6" *ngFor="let feature of features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas {{feature.icon}}"></i>
+            </div>
+            <h3 class="feature-title">{{feature.title}}</h3>
+            <p class="feature-description">{{feature.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

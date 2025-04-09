@@ -1,0 +1,107 @@
+<section class="waitlist-section section">
+  <div class="container">
+    <div class="waitlist-container">
+      <div class="row">
+        <div class="col-lg-5 waitlist-info">
+          <h2 class="waitlist-title">Join Our Waitlist</h2>
+          <p class="waitlist-subtitle">Be the first to experience our premium Ayurvedic products</p>
+          <div class="waitlist-benefits">
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="benefit-text">
+                <h4>Early Access</h4>
+                <p>Get first access to our product launches and exclusive offers.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-gift"></i>
+              </div>
+              <div class="benefit-text">
+                <h4>Special Discounts</h4>
+                <p>Enjoy special discounts reserved only for waitlist members.</p>
+              </div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon">
+                <i class="fas fa-newspaper"></i>
+              </div>
+              <div class="benefit-text">
+                <h4>Ayurvedic Insights</h4>
+                <p>Receive educational content about Ayurvedic wellness practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-7 waitlist-form-container">
+          <form [formGroup]="waitlistForm" (ngSubmit)="onSubmit()" class="waitlist-form">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                formControlName="name" 
+                class="form-control" 
+                [ngClass]="{'is-invalid': isSubmitted && f['name'].errors}"
+                placeholder="Your full name">
+              <div *ngIf="isSubmitted && f['name'].errors" class="invalid-feedback">
+                <div *ngIf="f['name'].errors['required']">Name is required</div>
+                <div *ngIf="f['name'].errors['minlength']">Name must be at least 2 characters</div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                formControlName="email" 
+                class="form-control" 
+                [ngClass]="{'is-invalid': isSubmitted && f['email'].errors}"
+                placeholder="Your email address">
+              <div *ngIf="isSubmitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">Email is required</div>
+                <div *ngIf="f['email'].errors['email']">Please enter a valid email address</div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="interests">Interests</label>
+              <select 
+                id="interests" 
+                formControlName="interests" 
+                class="form-control" 
+                [ngClass]="{'is-invalid': isSubmitted && f['interests'].errors}">
+                <option value="">Select your primary interest</option>
+                <option value="skincare">Ayurvedic Skincare</option>
+                <option value="supplements">Herbal Supplements</option>
+                <option value="teas">Herbal Teas</option>
+                <option value="oils">Massage Oils</option>
+                <option value="all">All Products</option>
+              </select>
+              <div *ngIf="isSubmitted && f['interests'].errors" class="invalid-feedback">
+                <div *ngIf="f['interests'].errors['required']">Please select an interest</div>
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn-primary" [disabled]="isSubmitting">
+                <span *ngIf="!isSubmitting">Join Waitlist</span>
+                <span *ngIf="isSubmitting">
+                  <i class="fas fa-spinner fa-spin"></i> Submitting...
+                </span>
+              </button>
+            </div>
+            
+            <div *ngIf="submitError" class="error-message">
+              {{submitError}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
